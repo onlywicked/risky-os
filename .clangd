@@ -1,0 +1,22 @@
+CompileFlags:
+  Add:
+    # Target architecture and standard
+    - --target=riscv32
+    - -std=c11
+    # Optimization and debugging
+    - -O2
+    - -g3
+    # Warnings
+    - -Wall
+    - -Wextra
+    # Freestanding environment (no standard library)
+    - -ffreestanding
+    - -nostdlib
+    # # Include directories (adjust paths as needed)
+    # - -I/path/to/riscv32/include
+    # - -I/path/to/riscv32/sysroot/usr/include
+    # # Define macros if needed
+    # - -D__riscv
+    # - -D__riscv32
+    - -Wl,-Tkernel.ld
+    - -Wl,-Map=kernel.map
