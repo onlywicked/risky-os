@@ -26,14 +26,14 @@ brew install llvm lld qemu
 ./run.sh
 ```
 
-# Progress
+## Progress
 
 Currently, the OS is able to boot and print a message to the screen.
 
-[x] Kernel
-[x] Bootloader
-[ ] Memory Management
-[ ] File System
-[ ] User Space
-[ ] Shell
-[ ] Drivers
+- [x] Kernel
+- [x] Bootloader
+- [ ] Memory Management
+- [ ] File System
+- [ ] User Space
+- [ ] Shell
+- [ ] Drivers
