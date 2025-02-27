@@ -1,7 +1,3 @@
-typedef unsigned char uint8_t;
-typedef unsigned int uint32_t;
-typedef uint32_t size_t;
-
 #include "kernel.h"
 #include "common.h"
 
@@ -33,18 +29,9 @@ void putchar(char ch) {
   sbi_call(ch, 0, 0, 0, 0, 0, 0, 1 /* Console Putchar */);
 }
 
-// memset initializes a buffer of size n with the given value.
-void *memset(void *buf, char c, size_t n) {
-  uint8_t *p = (uint8_t *)buf;
-
-  while (n--) {
-    *p++ = c;
-  }
-
-  return buf;
-}
-
 void kernel_main(void) {
+  memset(__bss, 0, __bss_end - __bss);
+
   printf("\n\nHello World!\n");
 
   printf("1 + 2 = %d, %x\n", 1 + 2, 0x1234abcd);
